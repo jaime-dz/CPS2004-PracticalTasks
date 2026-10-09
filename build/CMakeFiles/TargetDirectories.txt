@@ -1,0 +1,6 @@
+/home/jaime/Desktop/Practical2004/build/CMakeFiles/Practical2004.dir
+/home/jaime/Desktop/Practical2004/build/CMakeFiles/edit_cache.dir
+/home/jaime/Desktop/Practical2004/build/CMakeFiles/rebuild_cache.dir
+/home/jaime/Desktop/Practical2004/build/PracticalTasks02/CMakeFiles/p02_1.dir
+/home/jaime/Desktop/Practical2004/build/PracticalTasks02/CMakeFiles/edit_cache.dir
+/home/jaime/Desktop/Practical2004/build/PracticalTasks02/CMakeFiles/rebuild_cache.dir

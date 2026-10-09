@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/Practical2004.dir/main.cpp.o -o Practical2004 

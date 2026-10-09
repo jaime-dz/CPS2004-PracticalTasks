@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/home/jaime/Desktop/Practical2004/build",
+  "command": "/usr/bin/c++   -g -std=gnu++20 -o CMakeFiles/Practical2004.dir/main.cpp.o -c /home/jaime/Desktop/Practical2004/main.cpp",
+  "file": "/home/jaime/Desktop/Practical2004/main.cpp",
+  "output": "CMakeFiles/Practical2004.dir/main.cpp.o"
+},
+{
+  "directory": "/home/jaime/Desktop/Practical2004/build/PracticalTasks02",
+  "command": "/usr/bin/c++   -g -std=gnu++20 -o CMakeFiles/p02_1.dir/task1.cpp.o -c /home/jaime/Desktop/Practical2004/PracticalTasks02/task1.cpp",
+  "file": "/home/jaime/Desktop/Practical2004/PracticalTasks02/task1.cpp",
+  "output": "PracticalTasks02/CMakeFiles/p02_1.dir/task1.cpp.o"
+}
+]
