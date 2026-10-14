@@ -38,6 +38,7 @@ public:
 
 int main()
 {
+    const int NUM=3;
     firstClass f1;
     firstClass f2(34,"Jaime");
 
@@ -45,6 +46,32 @@ int main()
     f1.setNumber(23);
     cout<<f2.getName()<<endl;
     cout<<f2.getNumber()<<endl;
+
+    firstClass stackArray[NUM];
+    for(int i=0;i<NUM;i++)
+    {
+        stackArray[i].setName(to_string(i));
+        stackArray[i].setNumber(i);
+    }
+    for(int i=0;i<NUM;i++)
+    {
+        cout<<"Instance "<<i+1<<endl;
+        cout<<"Name: "<<stackArray[i].getName()<<endl;
+        cout<<"Number: "<<stackArray[i].getNumber()<<endl;
+    }
+
+    firstClass* heapArray=new firstClass[NUM];
+    for(int j=0;j<NUM;j++)
+    {
+        heapArray[j].setName("a");
+        heapArray[j].setNumber(2);
+    }
+    for(int j=0;j<NUM;j++)
+    {
+        cout<<"Instance "<<j+1<<endl;
+        cout<<"Name: "<<heapArray[j].getName()<<endl;
+        cout<<"Number: "<<heapArray[j].getNumber()<<endl;
+    }
 
     return 0;
 }
