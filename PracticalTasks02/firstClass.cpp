@@ -73,5 +73,7 @@ int main()
         cout<<"Number: "<<heapArray[j].getNumber()<<endl;
     }
 
+    delete[] heapArray;
+
     return 0;
 }
