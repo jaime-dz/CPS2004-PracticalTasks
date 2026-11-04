@@ -1,4 +1,8 @@
 #include "electronics.h"
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
 
 Electronics::Electronics() : Product(),brand(""),model(""),voltage(0.0),warrantyMonths(0),color(""){}
 
@@ -58,4 +62,24 @@ void Electronics::display() const
 {
     Product::display();
     cout<<"Brand: "<<brand<<"\nModel: "<<model<<"\nVoltage: "<<voltage<<"V\nWarranty Months: "<<warrantyMonths<<"\nColor: "<<color<<endl;
+}
+
+void Electronics::persist(ofstream& out) const
+{
+    out<<"ELECTRONICS|"<<name<<"|"<<price<<"|"<<id<<"|"<<description<<"|"<<brand<<"|"<<model<<"|"<<voltage<<"|"<<warrantyMonths<<"|"<<color<<endl;
+}
+
+Electronics* Electronics::restoreFromStream(stringstream& ss)
+{
+    string name, price, id, desc, brand, model, voltage, warrantyMonths, color;
+    std::getline(ss,name,'|');
+    std::getline(ss,price,'|');
+    std::getline(ss,id,'|');
+    std::getline(ss,desc,'|');
+    std::getline(ss,brand,'|');
+    std::getline(ss,model,'|');
+    std::getline(ss,voltage,'|');
+    std::getline(ss,warrantyMonths,'|');
+    std::getline(ss,color);
+    return new Electronics(name, std::stod(price),id, desc, brand, model,std::stod(voltage),std::stod(warrantyMonths),color);
 }

@@ -26,6 +26,8 @@ public:
     string getColor() const;
 
     void display() const override;
+    void persist(ofstream& out) const override;
+    static Electronics* restoreFromStream(stringstream& ss);
 };
 
 #endif

@@ -25,6 +25,8 @@ public:
     string getSeason() const;
 
     void display() const override;
+    void persist(ofstream& out) const override;
+    static Clothing* restoreFromStream(stringstream& ss);
 };
 
 #endif

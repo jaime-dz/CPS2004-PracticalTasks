@@ -23,6 +23,7 @@ public:
     string getDescription() const;
     virtual ~Product()=default;
     virtual void display() const;
+    virtual void persist(ofstream& out) const=0;
 };
 
 #endif

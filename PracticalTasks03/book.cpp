@@ -1,4 +1,8 @@
 #include "book.h"
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
 
 Book::Book() : Product(), author(""), isbn(""), yearPublished(0), genre(""), pages(0), language("") {}
 
@@ -69,4 +73,25 @@ void Book::display() const
 {
     Product::display();
     cout<<"Author: "<<author<<"\nISBN: "<<isbn<<"\nYear Published: "<<yearPublished<<"\nGenre: "<<genre<<"\nPages: "<<pages<<"\nLanguage: "<<language<<endl;
+}
+
+void Book::persist(ofstream& out) const
+{
+    out<<"BOOK|"<<name<<"|"<<price<<"|"<<id<<"|"<<description<<"|"<<author<<"|"<<isbn<<"|"<<yearPublished<<"|"<<genre<<"|"<<pages<<"|"<<language<<endl;
+}
+
+Book* Book::restoreFromStream(stringstream& ss)
+{
+    string name, priceStr, id, desc, author, isbn, yearStr, genre, pagesStr, language;
+    std::getline(ss, name, '|');
+    std::getline(ss, priceStr, '|');
+    std::getline(ss, id, '|');
+    std::getline(ss, desc, '|');
+    std::getline(ss, author, '|');
+    std::getline(ss, isbn, '|');
+    std::getline(ss, yearStr, '|');
+    std::getline(ss, genre, '|');
+    std::getline(ss, pagesStr, '|');
+    std::getline(ss, language);
+    return new Book(name, std::stod(priceStr), id, desc, author, isbn, std::stod(yearStr), genre, std::stod(pagesStr), language);
 }

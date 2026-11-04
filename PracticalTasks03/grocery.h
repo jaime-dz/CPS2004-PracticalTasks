@@ -16,6 +16,8 @@ public:
     double getWeight() const;
 
     void display() const override;
+    void persist(ofstream& out) const override;
+    static Grocery* restoreFromStream(stringstream& ss);
 };
 
 #endif

@@ -26,6 +26,8 @@ public:
     string getDimensions() const;
 
     void display() const override;
+    void persist(ofstream& out) const override;
+    static Toy* restoreFromStream(stringstream& ss);
 };
 
 #endif

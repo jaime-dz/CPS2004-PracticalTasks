@@ -1,4 +1,8 @@
 #include "toy.h"
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
 
 Toy::Toy() : Product(), material(""), pieces(0), minAge(0), dimensions("") {}
 
@@ -49,4 +53,22 @@ void Toy::display() const
 {
     Product::display();
     cout<<"Material: "<<material<<"\nPieces: "<<pieces<<"\nMin Age: "<<minAge<<"\nDimensions: "<<dimensions<<endl;
+}
+
+void Toy::persist(ofstream& out) const
+{
+    out<<"TOY|"<<name<<"|"<<price<<"|"<<id<<"|"<<description<<"|"<<material<<"|"<<pieces<<"|"<<minAge<<"|"<<dimensions<<endl;
+}
+Toy* Toy::restoreFromStream(stringstream& ss)
+{
+    string name, price, id, desc, material, pieces, minAge, dimensions;
+    std::getline(ss, name, '|');
+    std::getline(ss, price, '|');
+    std::getline(ss, id, '|');
+    std::getline(ss, desc, '|');
+    std::getline(ss, material, '|');
+    std::getline(ss, pieces, '|');
+    std::getline(ss, minAge, '|');
+    std::getline(ss, dimensions);
+    return new Toy(name, std::stod(price), id, desc, material, std::stod(pieces), std::stod(minAge), dimensions);
 }

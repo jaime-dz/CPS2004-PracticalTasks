@@ -46,5 +46,5 @@ string Product::getDescription() const
 
 void Product::display() const
 {
-    cout<<"ID: "<<id<<"\nName: "<<name<<"\nPrice: €"<<price<<"\nDescription: "<<description<<endl;
+    cout<<"ID: "<<id<<" | Name: "<<name<<" | Price: €"<<price<<" | Description: "<<description<<endl;
 }

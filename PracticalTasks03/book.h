@@ -32,6 +32,8 @@ public:
     string getLanguage() const;
 
     void display() const override;
+    void persist(ofstream& out) const override;
+    static Book* restoreFromStream(stringstream& ss);
 };
 
 #endif

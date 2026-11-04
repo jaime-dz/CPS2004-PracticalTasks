@@ -1,4 +1,8 @@
 #include "clothing.h"
+#include <string>
+#include <fstream>
+#include <sstream>
+#include <iostream>
 
 Clothing::Clothing() : Product(), size(""), material(""), brand(""), season("") {}
 
@@ -49,4 +53,23 @@ void Clothing::display() const
 {
     Product::display();
     cout<<"Size: "<<size<<"\nMaterial: "<<material<<"\nBrand: "<<brand<<"\nSeason: "<<season<<endl;
+}
+
+void Clothing::persist(ofstream& out) const
+{
+    out<<"CLOTHING|"<<name<<"|"<<price<<"|"<<id<<"|"<<description<<"|"<<size<<"|"<<material<<"|"<<brand<<"|"<<season<<endl;
+}
+
+Clothing* Clothing::restoreFromStream(stringstream& ss)
+{
+    string name, price, id, desc, size, material, brand, season;
+    std::getline(ss, name, '|');
+    std::getline(ss, price, '|');
+    std::getline(ss, id, '|');
+    std::getline(ss, desc, '|');
+    std::getline(ss, size, '|');
+    std::getline(ss, material, '|');
+    std::getline(ss, brand, '|');
+    std::getline(ss, season);
+    return new Clothing(name, std::stod(price),id, desc, size, material, brand, season);
 }
