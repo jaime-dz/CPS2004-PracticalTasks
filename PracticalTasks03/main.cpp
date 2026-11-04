@@ -3,10 +3,10 @@
 #include <fstream>
 #include "product.h"
 #include "grocery.h"
-#include "electronics.h"
+/*#include "electronics.h"
 #include "clothing.h"
 #include "book.h"
-#include "toy.h"
+#include "toy.h"*/
 #include "persistence.h"
 
 void clearCollection(std::vector<Product*>& collection)
